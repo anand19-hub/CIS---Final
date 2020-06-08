@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1380.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rmi.sms.client.DashboardController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #05071F;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/admin-png-8.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="50.0" />
+               </VBox.margin></ImageView>
+            <Label text="Admin" textFill="#e7e5e5">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Overview" textFill="#e7e5e5">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnStudents" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Students">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnStaffs" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Staffs">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnAdmin" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Admin">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="258.0" prefHeight="745.0" prefWidth="1134.0" style="-fx-background-color: #02030A;">
+         <children>
+            
+               <Pane fx:id="pnlOverview" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: black;">
+               <children>
+                  <TextField layoutX="927.0" layoutY="14.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+                  <Label layoutX="417.0" layoutY="19.0" text="Academy Management System" textFill="#e7e5e5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="1087.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER_LEFT" layoutX="237.0" layoutY="304.0" prefHeight="154.0" prefWidth="854.0" spacing="50.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="22000" textFill="#2a73ff">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total Students" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="1500" textFill="#26bfbc">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              
+                              <Label text="Total Staffs" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="1000" textFill="#fa5f7e">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total Employees" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="780" textFill="#de0000">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total Batch" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@style.css" />
+               </stylesheets>
+            </Pane>
+            <Pane fx:id="pnlAdmin" layoutX="10.0" layoutY="10.0" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: black;">
+               <children>
+                  <TextField layoutX="927.0" layoutY="14.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+                  <Label layoutX="417.0" layoutY="19.0" text="Admin" textFill="#e7e5e5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="1087.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <ScrollPane layoutX="14.0" layoutY="58.0" prefHeight="677.0" prefWidth="1108.0" stylesheets="@style.css">
+                     <content>
+                        <VBox fx:id="pnItems111" prefHeight="674.0" prefWidth="1106.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <ScrollPane prefHeight="334.0" prefWidth="1098.0" style="-fx-background-color: black;">
+                                 <content>
+                                    <Pane prefHeight="330.0" prefWidth="1084.0" style="-fx-border-color: white; -fx-background-color: #001f3f;" stylesheets="@style.css">
+                                       <children>
+                                          <VBox prefHeight="317.0" prefWidth="480.0">
+                                             <children>
+                                                <HBox prefHeight="310.0" prefWidth="480.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="206.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="122.0" text="First Name" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="122.0" text="Last Name" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="48.0" prefHeight="25.0" prefWidth="122.0" text="Register No" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="79.0" prefHeight="25.0" prefWidth="122.0" text="Contact No" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="104.0" prefHeight="25.0" prefWidth="122.0" text="Address" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="130.0" prefHeight="25.0" prefWidth="122.0" text="Email" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="156.0" prefHeight="25.0" prefWidth="122.0" text="Date of birth" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="215.0">
+                                                         <children>
+                                                            <TextField fx:id="txtAdmFirstName">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtAdmLastName" layoutX="10.0" layoutY="18.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtAdmRegNo" layoutX="10.0" layoutY="48.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtAdmContactNo" layoutX="10.0" layoutY="79.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtAdmAddress" layoutX="10.0" layoutY="104.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtAdmEmail" layoutX="10.0" layoutY="130.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <DatePicker fx:id="dtpAdmBateOfBirth" prefHeight="26.0" prefWidth="211.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </DatePicker>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="480.0" prefHeight="317.0" prefWidth="411.0">
+                                             <children>
+                                                <HBox prefHeight="310.0" prefWidth="480.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="206.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="122.0" text="Gender" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="122.0" text="Job role" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="334.0" prefWidth="215.0">
+                                                         <children>
+                                                            <HBox layoutX="10.0" layoutY="154.0" prefHeight="50.0" prefWidth="215.0">
+                                                               <children>
+                                                                  <RadioButton fx:id="rdbAdmMale" mnemonicParsing="false" text="Male" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" top="10.0" />
+                                                                     </HBox.margin>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="rdbAdmFemale" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" top="10.0" />
+                                                                     </HBox.margin>
+                                                                  </RadioButton>
+                                                               </children>
+                                                            </HBox>
+                                                            <TextField fx:id="txtAdmJobRole" layoutX="10.0" layoutY="18.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <HBox prefHeight="166.0" prefWidth="215.0">
+                                                               <children>
+                                                                  <Button fx:id="btnAdmAdd" mnemonicParsing="false" onAction="#onAdmAdd" prefHeight="26.0" prefWidth="67.0" text="Add" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="20.0" top="100.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btnAdmClear" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onAdmClear" prefHeight="26.0" prefWidth="69.0" text="Clear" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" top="100.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="899.0" layoutY="7.0" prefHeight="317.0" prefWidth="171.0" style="-fx-background-color: #AAAAAA;">
+                                             <children>
+                                                <HBox prefHeight="55.0" prefWidth="171.0">
+                                                   <children>
+                                                      <Label prefHeight="26.0" prefWidth="27.0" text="ID" textFill="WHITE">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtAdmID" prefHeight="26.0" prefWidth="130.0">
+                                                         <HBox.margin>
+                                                            <Insets top="10.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="btnAdmUpdate" mnemonicParsing="false" onAction="#onAdmUpdate" prefHeight="26.0" prefWidth="157.0" text="Update">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="btnAdmDelete" layoutX="15.0" layoutY="70.0" mnemonicParsing="false" onAction="#onAdmDelete" prefHeight="26.0" prefWidth="157.0" text="Delete">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="btnAdmRefresh" layoutX="15.0" layoutY="101.0" mnemonicParsing="false" onAction="#onAdmRefresh" prefHeight="26.0" prefWidth="157.0" text="Refresh">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </Pane>
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane prefHeight="318.0" prefWidth="1098.0">
+                                 <content>
+                                    <Pane prefHeight="304.0" prefWidth="1086.0" style="-fx-background-color: #001f3f;">
+                                       <children>
+                                          <TableView fx:id="TableViewAdm" prefHeight="304.0" prefWidth="1089.0" style="-fx-background-color: white;">
+                                             <columns>
+                                                <TableColumn maxWidth="-Infinity" minWidth="-Infinity" prefWidth="-1.0" text="Register No" />
+                                                <TableColumn fx:id="colAdmRegNo" prefWidth="111.20000910758972" text="Register No" />
+                                                <TableColumn fx:id="colAdmFirstName" prefWidth="103.20001220703125" text="Firstname" />
+                                                <TableColumn fx:id="colAdmLastName" prefWidth="70.40003967285156" text="Lastname" />
+                                                <TableColumn fx:id="colAdmContactNo" prefWidth="110.4000244140625" text="Contact No" />
+                                                <TableColumn fx:id="colAdmAddress" prefWidth="104.79998779296875" text="Address" />
+                                                <TableColumn fx:id="colAdmEmail" prefWidth="73.5999755859375" text="Email" />
+                                                <TableColumn fx:id="colAdmDateOfBirth" prefWidth="87.199951171875" text="Date of birth" />
+                                                <TableColumn fx:id="colAdmGender" prefWidth="79.20013427734375" text="Gender" />
+                                                <TableColumn fx:id="colAdmJobRole" prefWidth="132.8001708984375" text="Job role" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </Pane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@style.css" />
+               </stylesheets>
+            </Pane>
+            <Pane fx:id="pnlStudents" layoutX="10.0" layoutY="10.0" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: black;">
+               <children>
+                  <TextField layoutX="927.0" layoutY="14.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+                  <Label layoutX="417.0" layoutY="19.0" text="Student" textFill="#e7e5e5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="1087.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <ScrollPane layoutX="14.0" layoutY="58.0" prefHeight="677.0" prefWidth="1108.0" stylesheets="@style.css">
+                     <content>
+                        <VBox fx:id="pnItems1" prefHeight="674.0" prefWidth="1106.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <ScrollPane prefHeight="334.0" prefWidth="1098.0" style="-fx-background-color: black;">
+                                 <content>
+                                    <Pane prefHeight="330.0" prefWidth="1084.0" style="-fx-border-color: white; -fx-background-color: #001f3f;" stylesheets="@style.css">
+                                       <children>
+                                          <VBox prefHeight="317.0" prefWidth="480.0">
+                                             <children>
+                                                <HBox prefHeight="310.0" prefWidth="480.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="206.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="122.0" text="First Name" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="122.0" text="Last Name" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="48.0" prefHeight="25.0" prefWidth="122.0" text="Register No" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="79.0" prefHeight="25.0" prefWidth="122.0" text="Contact No" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="104.0" prefHeight="25.0" prefWidth="122.0" text="Address" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="130.0" prefHeight="25.0" prefWidth="122.0" text="Email" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="156.0" prefHeight="25.0" prefWidth="122.0" text="Date of birth" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="215.0">
+                                                         <children>
+                                                            <TextField fx:id="txtStdFirstName">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdLastName" layoutX="10.0" layoutY="18.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdRegNo" layoutX="10.0" layoutY="48.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdContactNo" layoutX="10.0" layoutY="79.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdAddress" layoutX="10.0" layoutY="104.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdEmail" layoutX="10.0" layoutY="130.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <DatePicker fx:id="dtpStdDateOfBirth" prefHeight="26.0" prefWidth="211.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </DatePicker>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="480.0" prefHeight="317.0" prefWidth="411.0">
+                                             <children>
+                                                <HBox prefHeight="310.0" prefWidth="480.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="206.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="122.0" text="Gender" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="122.0" text="Course" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="48.0" prefHeight="25.0" prefWidth="122.0" text="Batch" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="79.0" prefHeight="25.0" prefWidth="122.0" text="Semester" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="334.0" prefWidth="215.0">
+                                                         <children>
+                                                            <HBox layoutX="10.0" layoutY="154.0" prefHeight="50.0" prefWidth="215.0">
+                                                               <children>
+                                                                  <RadioButton fx:id="rdoStdMale" mnemonicParsing="false" text="Male" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" top="10.0" />
+                                                                     </HBox.margin>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="rdoStdFemale" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" top="10.0" />
+                                                                     </HBox.margin>
+                                                                  </RadioButton>
+                                                               </children>
+                                                            </HBox>
+                                                            <TextField fx:id="txtStdCourse" layoutX="10.0" layoutY="18.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdBatch" layoutX="10.0" layoutY="48.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtStdSemester" layoutX="10.0" layoutY="79.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <HBox prefHeight="166.0" prefWidth="215.0">
+                                                               <children>
+                                                                  <Button fx:id="btnStdAdd" mnemonicParsing="false" onAction="#onStdAdd" prefHeight="26.0" prefWidth="67.0" text="Add" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="20.0" top="100.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btnStdClear" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onStdClear" prefHeight="26.0" prefWidth="69.0" text="Clear" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" top="100.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="899.0" layoutY="7.0" prefHeight="317.0" prefWidth="171.0" style="-fx-background-color: #AAAAAA;">
+                                             <children>
+                                                <HBox prefHeight="55.0" prefWidth="171.0">
+                                                   <children>
+                                                      <Label prefHeight="26.0" prefWidth="27.0" text="ID" textFill="WHITE">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtStdID" prefHeight="26.0" prefWidth="130.0">
+                                                         <HBox.margin>
+                                                            <Insets top="10.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="btnStdUpdate" mnemonicParsing="false" onAction="#onStdUpdate" prefHeight="26.0" prefWidth="157.0" text="Update">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="btnStdDelete" layoutX="15.0" layoutY="70.0" mnemonicParsing="false" onAction="#onStdDelete" prefHeight="26.0" prefWidth="157.0" text="Delete">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="btnStdRefresh" layoutX="15.0" layoutY="101.0" mnemonicParsing="false" onAction="#onStdRefresh" prefHeight="26.0" prefWidth="157.0" text="Refresh">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </Pane>
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane prefHeight="318.0" prefWidth="1098.0">
+                                 <content>
+                                    <Pane prefHeight="304.0" prefWidth="1086.0" style="-fx-background-color: #001f3f;">
+                                       <children>
+                                          <TableView fx:id="TableViewStd" prefHeight="304.0" prefWidth="1089.0" style="-fx-background-color: white;">
+                                             <columns>
+                                                <TableColumn maxWidth="-Infinity" minWidth="-Infinity" prefWidth="-1.0" text="Register No" />
+                                                <TableColumn fx:id="colStdRegNo" prefWidth="111.20000910758972" text="Register No" />
+                                                <TableColumn fx:id="colStdFirstName" prefWidth="103.20001220703125" text="Firstname" />
+                                                <TableColumn fx:id="colStdLastName" prefWidth="70.40003967285156" text="Lastname" />
+                                                <TableColumn fx:id="colStdContactNo" prefWidth="110.4000244140625" text="Contact No" />
+                                                <TableColumn fx:id="colStdAddress" prefWidth="104.79998779296875" text="Address" />
+                                                <TableColumn fx:id="colStdEmail" prefWidth="73.5999755859375" text="Email" />
+                                                <TableColumn fx:id="colStdDateOfBirth" prefWidth="87.199951171875" text="Date of birth" />
+                                                <TableColumn fx:id="colStdGender" prefWidth="79.20013427734375" text="Gender" />
+                                                <TableColumn fx:id="colStdCourse" prefWidth="132.8001708984375" text="Course" />
+                                                <TableColumn fx:id="colStdBatch" minWidth="0.0" prefWidth="102.39990234375" text="Batch" />
+                                                <TableColumn fx:id="colStdSemester" prefWidth="108.79998779296875" text="Semester" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </Pane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@style.css" />
+               </stylesheets>
+            </Pane>
+            <Pane fx:id="pnlStaffs" layoutX="10.0" layoutY="10.0" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: black;">
+               <children>
+                  <TextField layoutX="927.0" layoutY="14.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+                  <Label layoutX="417.0" layoutY="19.0" text="Teachers" textFill="#e7e5e5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="1087.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <ScrollPane layoutX="14.0" layoutY="58.0" prefHeight="677.0" prefWidth="1108.0" stylesheets="@style.css">
+                     <content>
+                        <VBox fx:id="pnItems11" prefHeight="674.0" prefWidth="1106.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <ScrollPane prefHeight="334.0" prefWidth="1098.0" style="-fx-background-color: black;">
+                                 <content>
+                                    <Pane prefHeight="330.0" prefWidth="1084.0" style="-fx-border-color: white; -fx-background-color: #001f3f;" stylesheets="@style.css">
+                                       <children>
+                                          <VBox prefHeight="317.0" prefWidth="480.0">
+                                             <children>
+                                                <HBox prefHeight="310.0" prefWidth="480.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="206.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="122.0" text="First Name" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="122.0" text="Last Name" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="48.0" prefHeight="25.0" prefWidth="122.0" text="Register No" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="79.0" prefHeight="25.0" prefWidth="122.0" text="Contact No" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="104.0" prefHeight="25.0" prefWidth="122.0" text="Address" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="130.0" prefHeight="25.0" prefWidth="122.0" text="Email" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="156.0" prefHeight="25.0" prefWidth="122.0" text="Date of Birth" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="215.0">
+                                                         <children>
+                                                            <TextField fx:id="txtTchFirstName">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtTchLasName" layoutX="10.0" layoutY="18.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtTchRegNo" layoutX="10.0" layoutY="48.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtTchContactNo" layoutX="10.0" layoutY="79.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtTchAddress" layoutX="10.0" layoutY="104.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="txtTchEmail" layoutX="10.0" layoutY="130.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <DatePicker fx:id="dtpTchDateOfBirth" prefHeight="26.0" prefWidth="205.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </DatePicker>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="480.0" prefHeight="317.0" prefWidth="411.0">
+                                             <children>
+                                                <HBox prefHeight="310.0" prefWidth="480.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="206.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="122.0" text="Gender" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="122.0" text="Qualification" textFill="WHITE">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="334.0" prefWidth="215.0">
+                                                         <children>
+                                                            <HBox layoutX="10.0" layoutY="154.0" prefHeight="50.0" prefWidth="215.0">
+                                                               <children>
+                                                                  <RadioButton fx:id="rdoTchMale" mnemonicParsing="false" text="Male" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" top="15.0" />
+                                                                     </HBox.margin>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="rdoTchFemale" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" top="15.0" />
+                                                                     </HBox.margin>
+                                                                  </RadioButton>
+                                                               </children>
+                                                            </HBox>
+                                                            <TextField fx:id="txtTchQualification" layoutX="10.0" layoutY="18.0">
+                                                               <VBox.margin>
+                                                                  <Insets left="5.0" top="15.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <HBox prefHeight="166.0" prefWidth="215.0">
+                                                               <children>
+                                                                  <Button fx:id="btnTchAdd" mnemonicParsing="false" onAction="#onTchAdd" prefHeight="26.0" prefWidth="67.0" text="Add" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="20.0" top="100.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btnTchClear" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onTchClear" prefHeight="26.0" prefWidth="69.0" text="Clear" textFill="WHITE">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" top="100.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="899.0" layoutY="7.0" prefHeight="317.0" prefWidth="171.0" style="-fx-background-color: #AAAAAA;">
+                                             <children>
+                                                <HBox prefHeight="55.0" prefWidth="171.0">
+                                                   <children>
+                                                      <Label prefHeight="26.0" prefWidth="27.0" text="ID" textFill="WHITE">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtTchID" prefHeight="26.0" prefWidth="130.0">
+                                                         <HBox.margin>
+                                                            <Insets top="10.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="btnTchUpdate" mnemonicParsing="false" onAction="#onTchUpdate" prefHeight="26.0" prefWidth="157.0" text="Update">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="btnTchDelete" layoutX="15.0" layoutY="70.0" mnemonicParsing="false" onAction="#onTchDelete" prefHeight="26.0" prefWidth="157.0" text="Delete">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="btnTchRefresh" layoutX="15.0" layoutY="101.0" mnemonicParsing="false" onAction="#onTchRefresh" prefHeight="26.0" prefWidth="157.0" text="Refresh">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </Pane>
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane prefHeight="318.0" prefWidth="1098.0">
+                                 <content>
+                                    <Pane prefHeight="304.0" prefWidth="1086.0" style="-fx-background-color: #001f3f;">
+                                       <children>
+                                          <TableView fx:id="TableViewTch" prefHeight="304.0" prefWidth="1089.0" style="-fx-background-color: white;">
+                                             <columns>
+                                                <TableColumn maxWidth="-Infinity" minWidth="-Infinity" prefWidth="-1.0" text="Register No" />
+                                                <TableColumn fx:id="colTchRegNo" prefWidth="111.20000910758972" text="Register No" />
+                                                <TableColumn fx:id="colTchFirstName" prefWidth="103.20001220703125" text="Firstname" />
+                                                <TableColumn fx:id="colTchLastName" prefWidth="91.0" text="Lastname" />
+                                                <TableColumn fx:id="colTchContactNo" prefWidth="115.0" text="Contact No" />
+                                                <TableColumn fx:id="colTchAddress" prefWidth="166.0" text="Address" />
+                                                <TableColumn fx:id="colTchEmail" prefWidth="152.0" text="Email" />
+                                                <TableColumn fx:id="colTchDateOfBirth" prefWidth="108.0" text="Date of birth" />
+                                                <TableColumn fx:id="colTchGender" prefWidth="92.0" text="Gender" />
+                                                <TableColumn fx:id="colTchQualification" prefWidth="148.0" text="Qualification" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </Pane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@style.css" />
+               </stylesheets>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>
